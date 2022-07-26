@@ -1,14 +1,2 @@
 <h1 class="text-center">Angular Login Page</h1>
-<form>
-  <div class="form-group">
-    <label for="inputEmail">Email address</label>
-    <input type="email" class="form-control" name="email" [(ngModel)]="email">
-  </div>
-
-  <div class="form-group">
-    <label for="inputPassword">Password</label>
-    <input type="password" class="form-control" name="password" [(ngModel)]="password">
-  </div>
-
-  <button type="submit" class="btn btn-primary" [disabled]="!password || !email" (click)="loginUser()">Submit</button>
-</form>
+<app-credentials (credentials)="logUser($event)"></app-credentials>
