@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'loginPageApp';
+  email!: string;
+  password!: string;
+
+  loginUser() {
+    if(this.email === "admin@gmail.com" && this.password === "123456"){
+      console.log('Welcome!')
+    } else {
+      console.log('User Unauthorized')
+    }
+  }
 }
