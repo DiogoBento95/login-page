@@ -14,6 +14,7 @@ export class AppComponent {
       console.log('Welcome!')
     } else {
       console.log('User Unauthorized')
+      alert('User Unauthorized')
     }
   }
 }
