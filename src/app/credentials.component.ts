@@ -15,19 +15,18 @@ export class Credentials {
 
   <div class="form-group">
     <label for="inputPassword">Password</label>
-    <input type="password" class="form-control" #passwordInput>
+    <input type="password" class="form-control"  name="pass" #passwordInput>
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!passwordInput || !emailInput" (click)="submit()">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="" (click)="submit()">Submit</button>
 </form>
     `,
     styleUrls: ['./app.component.css']
   })
   export class CredentialsComponent implements OnInit {
-    @ViewChild('emailInput', {static:false}) emailInputRef!: ElementRef;
-    @ViewChild('passwordInput', {static:false}) passwordInputRef!: ElementRef;
+    @ViewChild('emailInput', {static:true}) emailInputRef!: ElementRef;
+    @ViewChild('passwordInput', {static:true}) passwordInputRef!: ElementRef;
     @Output() credentials = new EventEmitter<Credentials>();
-    
   
     constructor() {}
     ngOnInit() {}
